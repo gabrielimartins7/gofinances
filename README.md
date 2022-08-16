@@ -1,4 +1,4 @@
-# Mobile Developer
+# GoFinances
 
 > In this readme I will help you with the installation and execution of the project step by step.
 
