@@ -10,6 +10,7 @@
 - [x] Typescript
 - [x] React native responsive fontsize
 - [x] React native iphone X helper
+- [x] React native gesture handler
 - [x] Styled components
 - [x] Expo vector icons
 
