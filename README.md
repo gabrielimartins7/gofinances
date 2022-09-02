@@ -11,6 +11,7 @@
 - [x] React native responsive fontsize
 - [x] React native iphone X helper
 - [x] React native gesture handler
+- [x] React hook form
 - [x] Styled components
 - [x] Expo vector icons
 
