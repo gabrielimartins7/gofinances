@@ -6,6 +6,7 @@ import {
   getBottomSpace,
   getStatusBarHeight,
 } from "react-native-iphone-x-helper";
+import { BorderlessButton } from "react-native-gesture-handler";
 
 import { DataListProps } from ".";
 
@@ -96,3 +97,5 @@ export const TransactionList = styled(
     paddingBottom: getBottomSpace(),
   },
 })``;
+
+export const LogoutButton = styled(BorderlessButton)``;
