@@ -11,6 +11,7 @@
 - [x] React native responsive fontsize
 - [x] React native iphone X helper
 - [x] React native gesture handler
+- [x] React-Native-uuid
 - [x] React navigation
 - [x] React hook form
 - [x] Styled components
