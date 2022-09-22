@@ -6,8 +6,9 @@
 
 - [x] Npm or Yarn
 - [x] Expo
-- [x] React Native
+- [x] Expo vector icons
 - [x] Typescript
+- [x] React Native
 - [x] React native responsive fontsize
 - [x] React native iphone X helper
 - [x] React native gesture handler
@@ -15,7 +16,6 @@
 - [x] React navigation
 - [x] React hook form
 - [x] Styled components
-- [x] Expo vector icons
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
