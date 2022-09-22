@@ -42,13 +42,25 @@ export function Dashboard() {
         currency: 'BRL'
       });
 
-      const date = new Date(item.date)
-      const dateFormatted = Intl.DateTimeFormat('pt-BR', {
+      
+      const date = Intl.DateTimeFormat('pt-BR', {
         day: '2-digit',
         month: '2-digit',
         year: '2-digit'
-      }).format(date);
+      }).format(new Date(item.date));
+
+      return {
+        id: item.id,
+        name: item.name,
+        amount,
+        type: item.type,
+        category: item.category,
+        date,
+      }
+
     });
+
+    setData(transactionsFormatted);
   }
 
   useEffect(() => {
