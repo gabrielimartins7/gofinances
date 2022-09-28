@@ -91,6 +91,8 @@ export function Dashboard() {
 
     setTransactions(transactionsFormatted);
 
+    const lastTransacionEntries = transactions.filter(transactions => transactions.type === 'positive');
+
     const total = entriesTotal - expensiveTotal;
 
     setHighlightData({
