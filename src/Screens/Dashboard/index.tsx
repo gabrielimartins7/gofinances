@@ -91,7 +91,17 @@ export function Dashboard() {
 
     setTransactions(transactionsFormatted);
 
-    const lastTransacionEntries = transactions.filter(transactions => transactions.type === 'positive');
+    const lastTransacionEntries = 
+    Math.max.apply(Math, transactions
+    .filter((transactions : DataListProps) => transactions.type === 'positive')
+    .map((transactions : DataListProps) => new Date(transactions.date).getTime()))
+
+    const lastTransacionEntriesFormatted = Intl.DateTimeFormat('pt-BR', {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit'
+    }).format(new Date(lastTransacionEntries));
+    
 
     const total = entriesTotal - expensiveTotal;
 
