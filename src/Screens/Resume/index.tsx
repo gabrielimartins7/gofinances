@@ -1,5 +1,7 @@
 import React from "react";
 
+import { HistoryCard } from "../../Components/HistoryCard";
+
 import { Container, Header, Title } from "./styles";
 
 export function Resume() {
@@ -8,6 +10,12 @@ export function Resume() {
       <Header>
         <Title>Resumo por categoria</Title>
       </Header>
+
+      <HistoryCard 
+        title="Compras"
+        amount="R$150,50"
+        color="red"
+      />
     </Container>
   );
 }
