@@ -13,9 +13,11 @@
 - [x] React native iphone X helper
 - [x] React native gesture handler
 - [x] React-Native-uuid
+- [x] React-Native-svg
 - [x] React navigation
 - [x] React hook form
 - [x] Styled components
+- [x] Victory Native
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
