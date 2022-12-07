@@ -3,11 +3,22 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { VictoryPie } from "victory-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import { useTheme } from "styled-components"
 
 import { HistoryCard } from "../../Components/HistoryCard";
 
-import { Container, Header, Title, Content, ChartContainer } from "./styles";
+import { 
+  Container,
+  Header, 
+  Title, 
+  Content, 
+  ChartContainer,
+  MounthSelect,
+  MounthSelectButton,
+  SelectIcon,
+  Mounth,
+} from "./styles";
 
 import { categories } from "../../utils/categories";
 
@@ -88,7 +99,26 @@ export function Resume() {
         <Title>Resumo por categoria</Title>
       </Header>
 
-    <Content>
+    <Content
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{
+        paddingHorizontal: 24,
+        paddingBottom: useBottomTabBarHeight(),
+      }}
+    >
+
+      <MounthSelect>
+        <MounthSelectButton>
+          <SelectIcon name="chevron-left"/>
+        </MounthSelectButton>
+
+        <Mounth>Dezembro</Mounth>
+
+        <MounthSelectButton>
+          <SelectIcon name="chevron-right"/>
+        </MounthSelectButton>
+      </MounthSelect>
+
       <ChartContainer>
         <VictoryPie 
           data={totalByCategories}
