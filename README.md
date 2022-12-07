@@ -18,6 +18,7 @@
 - [x] React hook form
 - [x] Styled components
 - [x] Victory Native
+- [x] Date FNS
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
