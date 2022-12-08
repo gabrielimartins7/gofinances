@@ -45,14 +45,13 @@ interface CategoryData {
 }
 
 export function Resume() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [ selectedDate, setSelectedDate] = useState(new Date());
   const [totalByCategories, setTotalByCategories] = useState<CategoryData[]>([]);
 
   const theme = useTheme();
 
   function handleDateChange(action: 'next' | 'prev'){
-    setIsLoading(true);
     if(action === 'next'){
       setSelectedDate(addMonths(selectedDate, 1));
     }else{
@@ -61,6 +60,7 @@ export function Resume() {
   }
 
   async function loadData() {
+    setIsLoading(true);
     const dataKey = "@gofinances:transactions";
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
@@ -110,13 +110,9 @@ export function Resume() {
     setTotalByCategories(totalByCategory);
     setIsLoading(false);
   }
-  useEffect(() =>{
-    loadData();
-  }, [selectedDate]);
-  
   useFocusEffect(useCallback(() => {
     loadData();
-  }, []));
+  }, [selectedDate]));
 
   return (
     <Container>
@@ -159,7 +155,7 @@ export function Resume() {
               colorScale={totalByCategories.map(categoy => categoy.color)}
               style={{
                 labels: { 
-                  fontSize: RFValue(18),
+                  fontSize: RFValue(14),
                   fontWeight: 'bold',
                   fill: theme.colors.shape
                 }
