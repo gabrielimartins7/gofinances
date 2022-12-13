@@ -1,4 +1,4 @@
-import React, { SVGProps } from "react";
+import React from "react";
 import { RectButtonProps } from "react-native-gesture-handler";
 import { SvgProps } from "react-native-svg";
 
