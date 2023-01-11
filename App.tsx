@@ -5,8 +5,9 @@ import 'intl/locale-data/jsonp/pt-BR';
 import React from "react";
 import { StatusBar } from 'react-native';
 import AppLoading from "expo-app-loading";
-import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "styled-components";
+
+import { Routes } from "./src/routes";
 
 import {
   useFonts,
@@ -16,10 +17,6 @@ import {
 } from "@expo-google-fonts/poppins";
 
 import theme from "./src/global/styles/theme";
-
-import { AppRoutes } from "./src/routes/app.routes";
-
-import { SignIn } from './src/Screens/SignIn';
 
 import { AuthProvider } from './src/hooks/auth';
 
@@ -36,13 +33,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
         <StatusBar barStyle={'light-content'} />
-
         <AuthProvider>
-          <SignIn />
+          <Routes />
         </AuthProvider>
-      </NavigationContainer>
     </ThemeProvider>
   );
 }

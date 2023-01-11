@@ -1,4 +1,10 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
+import React, { 
+    createContext, 
+    ReactNode, 
+    useContext, 
+    useState,
+    useEffect
+} from "react";
 
 const { CLIENT_ID } = process.env;
 const { REDIRECT_URI } = process.env;
@@ -89,6 +95,12 @@ function AuthProvider({ children }: AuthProviderProps ){
             throw new Error(error);
         }
     }
+
+    useEffect(() => {
+        async function loadUserStorageDate(){
+            const data = await AsyncStorage.getItem();
+        }
+    }, []);
 
     return(
         <AuthContext.Provider value={{ 
