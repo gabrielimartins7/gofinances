@@ -18,7 +18,7 @@ import {
 
 import theme from "./src/global/styles/theme";
 
-import { AuthProvider } from './src/hooks/auth';
+import { AuthProvider, useAuth } from './src/hooks/auth';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +27,9 @@ export default function App() {
     Poppins_600SemiBold,
   });
 
-  if (!fontsLoaded) {
+  const { userStorage } = useAuth();
+
+  if (!fontsLoaded || userStorage) {
     return <AppLoading />;
   }
 

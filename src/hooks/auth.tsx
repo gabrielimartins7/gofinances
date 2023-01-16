@@ -29,6 +29,7 @@ interface AuthContextData {
     signInWithGoogle(): Promise<void>;
     signInWithApple(): Promise<void>;
     signOut(): Promise<void>;
+    userStorage: boolean;
 }
 
 interface AuthorizationResponse {
@@ -124,7 +125,8 @@ function AuthProvider({ children }: AuthProviderProps ){
             user, 
             signInWithGoogle,
             signInWithApple,
-            signOut
+            signOut,
+            userStorage
         }}>
             { children }
         </AuthContext.Provider>
